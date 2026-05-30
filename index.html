@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>G-Code NC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>EA CNC SOLUTIONS</h1>
+
+    <form id="formCNC">
+        <label>Nº da Ferramenta:</label>
+        <input type="number" id="ToolNum" required>
+
+        <label>Zero Peça:</label>
+        <input type="number" id="Workoffset" required>
+
+        <label>Posição Segura em "X":</label>
+        <input type="text" id="XSafe" required>
+
+        <label>Posição Segura em "Y":</label>
+        <input type="text" id="YSafe" required>
+
+        <label>Z Inicial:</label>
+        <input type="text" id="ZInitial" required>
+
+        <label>Z Final:</label>
+        <input type="text" id="ZFinish" required>
+
+        <label>Incremento em "Z" (valor positivo):</label>
+        <input type="text" id="ZIncrement" required>
+
+        <label>Avanço (F):</label>
+        <input type="number" id="FeedRate" required>
+
+        <label>Perfil da Peça:</label>
+        <textarea id="Profile" rows="20" required></textarea>
+
+        <button type="submit">Gerar Programa</button>
+    </form>
+    
+    <h2>Programa CNC Gerado:</h2>
+    <textarea id="resultado" rows="15"></textarea>
+
+    <button id="downloadBtn">Baixar Arquivo .nc</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
