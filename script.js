@@ -91,7 +91,7 @@ document.getElementById("formCNC").addEventListener("submit", function(e) {
 
     /* ======== PROGRAMA CNC ======== */
     const programa = `%
-O0001 (ROSCA ${sentido} INTERPOLADA)
+O0001 (ROSCA ${sentido} INTERNA INTERPOLADA)
 (G-CODE NC FRESAMENTO)
 (GERADO POR EA CNC SOLUTIONS)
 (USO DA COMPENSAÇÃO OBRIGATORIA)
@@ -105,7 +105,7 @@ S${Speed} M3
 
 G0 X${CenterX} Y${CenterY}
 G43 G0 Z100 H${ToolNum}
-( ROSCA ${sentido} - DIAMETRO: ${Diameter} - PASSO: ${Pitch} )
+( ROSCA ${sentido} INTERNA - DIAMETRO: ${Diameter} - PASSO: ${Pitch} )
 G0 Z${(ZInitial + 5).toFixed(3)} M8
 G1 Z${ZInitial.toFixed(3)} F${FeedRate}
 #1=${(Hole/2).toFixed(3)}+${RadInc}
