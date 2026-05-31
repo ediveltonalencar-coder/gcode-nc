@@ -77,8 +77,6 @@ document.getElementById("formCNC").addEventListener("submit", function(e) {
     /* ======== CÁLCULOS ======== */
     const repeatCountDiameter = Math.floor((Diameter - Hole) / RadInc);
     const repeatCountPitch = Math.ceil((ZInitial - ZFinish) / Pitch);
-    const DepthFinish = (ZInitial - ZFinish) - (repeatCountPitch * Pitch) + 0.001;
-    const PosFinishAngle = 360 * (DepthFinish / Pitch);
     const NewZinitial = ZFinish + (repeatCountPitch * Pitch);
     let Compensacao , Interpolacao;
         if (sentido === "ESQUERDA") {
