@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>G-Code NC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <img src="logo.png" id="logo" alt="Logo">
+
+    <h1>G-code Interpolação de Rosca</h1>
+
+    <form id="formCNC">
+
+        <div class="campo">
+            <label for="ToolNum">Nº da Ferramenta:</label>
+            <input type="number" id="ToolNum" required>
+        </div>
+       
+        <div class="campo">
+            <label for="Workoffset">Zero Peça:</label>
+            <input type="number" id="Workoffset" required>
+        </div>        
+
+        <div class="campo">
+            <label for="FeedRate">Avanço (F):</label>
+            <input type="number" id="FeedRate" required>
+        </div>
+
+        <div class="campo">
+            <label for="Speed">RPM:</label>
+            <input type="number" id="Speed" required>
+        </div> 
+
+        <div class="campo">
+            <label for="Pitch">Passo em "mm":</label>
+            <input type="text" id="Pitch" required>
+        </div>
+
+        <div class="campo">
+            <label for="Sentido">Sentido da Rosca:</label>
+            <select id="Sentido" required>                
+                <option value="DIREITA">Direita (G2)</option>
+                <option value="ESQUERDA">Esquerda (G3)</option>
+            </select>
+        </div>
+    
+        <div class="campo">
+            <label for="Hole">Ø do Furo:</label>
+            <input type="text" id="Hole" required>
+        </div>
+
+        <div class="campo">
+            <label for="Diameter">Ø da Rosca:</label>
+            <input type="text" id="Diameter" required>
+        </div>         
+
+        <div class="campo">
+            <label for="RadInc">Incremento Para Abrir Rosca:</label>
+            <input type="text" id="RadInc" required>
+        </div>        
+
+        <div class="campo">
+            <label for="ZInitial">Z Inicial:</label>
+            <input type="text" id="ZInitial" required>
+        </div>
+
+        <div class="campo">
+            <label for="ZFinish">Z Final:</label>
+            <input type="text" id="ZFinish" required>
+        </div> 
+
+        <div class="campo">
+            <label for="CenterX">Centro Furo no eixo "X":</label>
+            <input type="text" id="CenterX" required>
+        </div>
+
+        <div class="campo">
+            <label for="CenterY">Centro Furo no eixo "Y":</label>
+            <input type="text" id="CenterY" required>
+        </div>
+
+        <button type="submit" style="grid-column: 1 / -1;">Gerar Programa</button>
+
+    </form>
+
+    <h2>Programa CNC Gerado:</h2>
+
+    <textarea id="resultado" rows="15" readonly></textarea>
+
+    <button id="downloadBtn">Baixar Arquivo .nc</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
